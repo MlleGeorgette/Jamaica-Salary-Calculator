@@ -123,7 +123,7 @@ def calculator():
                     ]},
                     {'title': 'MORE INFO', 'content': [
                     put_text("For more information about this project, visit my GitHub profile:"),
-                    put_link('MlleGeorgette', 'https://github.com/MlleGeorgette/hello-world', new_window=True)
+                    put_link('MlleGeorgette', 'https://github.com/MlleGeorgette/Jamaica-Salary-Calculator', new_window=True)
                 ]},
                 ])
 
