@@ -5,6 +5,10 @@ from pywebio.output import *
 from pywebio.session import run_js
 import locale
 
+# Set theme
+pywebio.config(theme="sketchy")
+
+# Set currency
 locale.setlocale( locale.LC_ALL, 'en_US.utf-8')
 
 # Information to be displayed
@@ -39,6 +43,7 @@ def EducationTaxInfo():
         put_buttons(['Close'], onclick=lambda _: close_popup())
     ])
 
+# Tax rates
 paye_threshold1 = 1500000
 paye_threshold2 = 6000000
 nis_rate = 0.03
@@ -49,11 +54,13 @@ paye_rate1 = 0.25
 paye_rate2 = 0.30
 
 # Function to calculate take-home pay and salary deductions
-pywebio.config(theme="sketchy")
 def RunCalculator():
     clear('B')
     with use_scope('B'):
+        # Retrieve user input
         gross = input("Input your gross annual salary (JMD): ", type=FLOAT)
+        
+        # Make calculations
         taxable_income = gross - paye_threshold1
         nis_amount = gross * nis_rate
         nht = gross * nht_rate
@@ -79,6 +86,7 @@ def RunCalculator():
         net_income = gross - total_deductions
         monthly_income = net_income/12
  
+        # Display info to user
         put_table([
             [span('RESULTS (JMD)', col=2)],
             ['Gross', put_text(locale.currency(gross, grouping=True))],
