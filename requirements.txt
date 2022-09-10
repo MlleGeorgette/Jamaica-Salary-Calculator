@@ -12,7 +12,7 @@ async-timeout==4.0.2
 attrs==22.1.0
 Babel==2.10.3
 backcall==0.2.0
-backports.zoneinfo==0.2.1
+backports.zoneinfo==0.2.1;python_version<"3.9"
 beautifulsoup4==4.11.1
 bert-tensorflow==1.0.4
 bleach==5.0.1
