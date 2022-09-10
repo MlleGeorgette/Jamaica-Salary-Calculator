@@ -1,9 +1,15 @@
 # Import models
+from pywebio.platform.flask import webio_view
+from pywebio import STATIC_PATH
+from flask import Flask, send_from_directory
 import pywebio
 from pywebio.input import *
 from pywebio.output import *
 from pywebio.session import run_js
+import argparse
 import locale
+
+app = Flask(__name__)
 
 # Set theme
 pywebio.config(theme="sketchy")
@@ -127,5 +133,15 @@ def calculator():
                 ]},
                 ])
 
+# if __name__ == '__main__':
+    # pywebio.start_server(calculator, port=8080, debug=True, remote_access=False)
+
+app.add_url_rule('/salarycalculator', 'webio_view', webio_view(calculator),
+methods=['GET', 'POST', 'OPTIONS'])
+
 if __name__ == '__main__':
-    pywebio.start_server(calculator, port=8080, debug=True, remote_access=False)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, default=8080)
+    args = parser.parse_args()
+
+    pywebio.start_server(calculator, port=args.port)
