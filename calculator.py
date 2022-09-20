@@ -19,7 +19,7 @@ locale.setlocale( locale.LC_ALL, 'en_US.utf-8')
 
 # Information to be displayed
 DisclaimerInfo = "Yawdie Code DOES NOT guarantee that any information presented by this application is accurate, complete or up-to-date; and DOES NOT accept responsibility for any financial decisions made, including any financial losses incurred, based on the information in this application. For legal or financial advice, consult a qualified lawyer or financial adviser."
-CalculatorInfo = "Use this simple calculator to get an estimate of your take-home pay and total tax deductions based on your gross annual salary in Jamaican Dollars. Please note that this calculator does not currently consider pro-rata salaries, pensions contributions, overtime, or bonuses."
+CalculatorInfo = "Use this simple calculator to get an estimate of your take-home pay and total tax deductions based on your gross annual salary in Jamaican Dollars. Please note that this calculator does not currently consider pro-rata salaries, pension contributions, overtime, or bonuses."
 
 def PAYEInfo():
     popup('What is PAYE?',[
